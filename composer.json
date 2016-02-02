@@ -1,7 +1,7 @@
 {
   "name": "suribit/graphql-bundle",
   "description": "Symfony2 GraphQl Bundle",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "MIT",
   "homepage": "https://github.com/suribit/GraphQLBundle",
   "authors": [
