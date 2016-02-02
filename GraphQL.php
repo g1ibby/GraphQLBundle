@@ -1,6 +1,6 @@
 <?php
 
-namespace Suribit\GraphQlCoreBundle;
+namespace Suribit\GraphQLBundle;
 
 
 use Doctrine\ORM\EntityManager;
