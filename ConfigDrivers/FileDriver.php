@@ -4,9 +4,6 @@ namespace Suribit\GraphQLBundle\ConfigDrivers;
 
 abstract class FileDriver
 {
-    /**
-     * @var string
-     */
     private $path;
     protected $types;
     protected $schema;
