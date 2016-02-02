@@ -1,5 +1,5 @@
 {
-  "name": "surbibit/graphql-bundle",
+  "name": "suribit/graphql-bundle",
   "description": "Symfony2 GraphQl Bundle",
   "license": "MIT",
   "homepage": "https://github.com/suribit/GraphQLBundle",
@@ -23,5 +23,5 @@
     "psr-4": {
       "Suribit\\GraphQLBundle\\": ""
     }
-  },
+  }
 }
