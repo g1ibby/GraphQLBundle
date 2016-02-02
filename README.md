@@ -1,6 +1,50 @@
 # Symfony 2 GraphQl Bundle
 
-Use Facebook GraphQL with Laravel 5. It is based on the PHP implementation [here](https://github.com/webonyx/graphql-php). 
-You can find more information about GraphQL in the [GraphQL Introduction](http://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html) 
-on the [React](http://facebook.github.io/react) blog or you can read the [GraphQL specifications](https://facebook.github.io/graphql/). This is a work in progress.
+Use Facebook GraphQL with Symfony 2. This library port [laravel-graphql](https://github.com/Folkloreatelier/laravel-graphql).
+It is based on the PHP implementation [here](https://github.com/webonyx/graphql-php). 
+
+## Installation
+
+**1-** Require the package via Composer in your `composer.json`.
+```json
+{
+	"require": {
+		"suribit/graphql-bundle": "*"
+	}
+}
+```
+
+**2-** Run Composer to install or update the new requirement.
+
+```bash
+$ composer install
+```
+
+or
+
+```bash
+$ composer update
+```
+
+**3-** Add the service provider to your `app/AppKernel.php` file
+```php
+<?php
+// app/AppKernel.php
+
+// ...
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new Suribit\GraphQLBundle\GraphQLBundle(),
+        );
+
+        // ...
+    }
+
+    // ...
+}
+```
 
