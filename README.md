@@ -1,4 +1,4 @@
-# Symfony 2 GraphQl Bundle1
+# Symfony 2 GraphQl Bundle
 
 Use Facebook GraphQL with Laravel 5. It is based on the PHP implementation [here](https://github.com/webonyx/graphql-php). 
 You can find more information about GraphQL in the [GraphQL Introduction](http://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html) 
