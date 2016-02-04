@@ -3,7 +3,7 @@
 namespace Suribit\GraphQLBundle\Support;
 
 /**
- * This class is almost a complete copy of the class Illuminate\Support\Fluent (Larvel framework)
+ * This class is almost a complete copy of the class Illuminate\Support\Fluent (Laravel framework)
  * @package Suribit\GraphQLBundle\Support
  */
 

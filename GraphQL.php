@@ -10,6 +10,7 @@ use GraphQL\Schema;
 use GraphQL\Type\Definition\InterfaceType;
 use GraphQL\Type\Definition\ObjectType;
 use Suribit\GraphQLBundle\ConfigDrivers\Yaml\YamlDriver;
+use Suribit\GraphQLBundle\Error\ValidationError;
 use Suribit\GraphQLBundle\Support\Type;
 
 class GraphQL
@@ -184,6 +185,12 @@ class GraphQL
         if(!empty($locations))
         {
             $error['locations'] = array_map(function($loc) { return $loc->toArray();}, $locations);
+        }
+
+        $previous = $e->getPrevious();
+        if($previous && $previous instanceof ValidationError)
+        {
+            $error['validation'] = $previous->getValidatorMessages();
         }
 
         return $error;
