@@ -1,6 +1,7 @@
 <?php
 
 namespace Suribit\GraphQLBundle\Support;
+use Suribit\GraphQLBundle\GraphQL;
 
 /**
  * This class is almost a complete copy of the class Illuminate\Support\Fluent (Laravel framework)
@@ -9,12 +10,26 @@ namespace Suribit\GraphQLBundle\Support;
 
 class AbstractSupport
 {
+
+    /** @var GraphQL */
+    protected $manager = null;
+
     /**
      * All of the attributes set on the container.
      *
      * @var array
      */
     protected $attributes = [];
+
+    /**
+     * Set manager for all Support
+     *
+     * @param $manager GraphQL
+     */
+    public function setManager($manager)
+    {
+        $this->manager = $manager;
+    }
 
     /**
      * Get an attribute from the container.

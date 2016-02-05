@@ -2,18 +2,8 @@
 
 namespace Suribit\GraphQLBundle\Support;
 
-
-use Suribit\GraphQLBundle\GraphQL;
-
 class Field extends AbstractSupport
 {
-    /** @var GraphQL */
-    protected $manager = null;
-
-    public function __construct($manager)
-    {
-        $this->manager = $manager;
-    }
 
     public function attributes()
     {

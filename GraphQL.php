@@ -79,7 +79,9 @@ class GraphQL
         {
             if(is_string($field))
             {
-                $typeFields[$key] = (new $field($this))->toArray();
+                $fieldObj = new $field();
+                $fieldObj->setManager($this);
+                $typeFields[$key] = $fieldObj->toArray();
             }
             else
             {
@@ -133,14 +135,8 @@ class GraphQL
         $this->queries[$name] = $query;
     }
 
-    public function addType($class, $name = null)
+    public function addType($class, $name)
     {
-        if(!$name)
-        {
-            $type = is_object($class) ? $class : new $class();
-            $name = $type->name;
-        }
-
         $this->types[$name] = $class;
     }
 
@@ -161,6 +157,7 @@ class GraphQL
         if(!is_object($type))
         {
             $type = new $type();
+            $type->setManager($this);
         }
 
         $instance = $type->toType();
