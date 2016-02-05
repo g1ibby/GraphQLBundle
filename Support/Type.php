@@ -9,6 +9,8 @@ class Type extends AbstractSupport
 {
     protected static $instances = [];
 
+    public $original = null;
+
     public function attributes()
     {
         return [];
@@ -104,7 +106,7 @@ class Type extends AbstractSupport
 
     public function toType()
     {
-        return new ObjectType($this->toArray());
+        $this->original = new ObjectType($this->toArray());
     }
 
     /**

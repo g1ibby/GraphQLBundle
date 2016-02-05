@@ -154,22 +154,19 @@ class GraphQL
 
         /** @var Type $type */
         $type = $this->types[$name];
-        if(!is_object($type))
-        {
-            $type = new $type();
-            $type->setManager($this);
-        }
+        $type = new $type();
+        $type->setManager($this);
+        $type->toType();
 
-        $instance = $type->toType();
-        $this->typesInstances[$name] = $instance;
+        $this->typesInstances[$name] = $type;
 
         //Check if the object has interfaces
         if($type->interfaces)
         {
-            InterfaceType::addImplementationToInterfaces($instance);
+            InterfaceType::addImplementationToInterfaces($type->original);
         }
 
-        return $instance;
+        return $type;
     }
 
     public function formatError(Error $e)
