@@ -54,6 +54,7 @@ class Type extends AbstractSupport
             if(is_string($field))
             {
                 $field = new Field($field);
+                $field->setManager($this);
                 $field->name = $name;
                 $allFields[$name] = $field->toArray();
             }
