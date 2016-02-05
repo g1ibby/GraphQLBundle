@@ -42,6 +42,6 @@ class InterfaceType extends Type
 
     public function toType()
     {
-        return new BaseInterfaceType($this->toArray());
+        $this->original = new BaseInterfaceType($this->toArray());
     }
 }
