@@ -42,6 +42,10 @@ class GraphQL
         foreach($types as $name => $type)
         {
             $this->addType($type, $name);
+        }
+
+        foreach($types as $name => $type)
+        {
             $this->type($name);
         }
 
